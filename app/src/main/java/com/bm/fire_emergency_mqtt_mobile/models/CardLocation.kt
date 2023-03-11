@@ -3,7 +3,7 @@ package com.bm.fire_emergency_mqtt_mobile.models
 import com.google.gson.annotations.SerializedName
 import java.util.Date
 
-class Location(
+class CardLocation(
     @SerializedName("id")
     val id: Number,
     @SerializedName("latitude")
