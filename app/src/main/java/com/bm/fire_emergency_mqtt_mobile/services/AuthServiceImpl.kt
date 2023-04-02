@@ -9,7 +9,7 @@ import io.reactivex.Single
 
 class AuthServiceImpl : AuthService {
 
-    private val api = api<AuthService, Entity>()
+    private val api = api<AuthService, Entity>(false)
     override fun register(registerDto: RegisterDto): Single<SingleResponseModel<AccessToken>> {
         return api.register(registerDto)
     }
