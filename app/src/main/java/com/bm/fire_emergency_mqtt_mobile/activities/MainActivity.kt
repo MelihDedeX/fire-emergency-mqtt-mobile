@@ -1,4 +1,4 @@
-package com.bm.fire_emergency_mqtt_mobile
+package com.bm.fire_emergency_mqtt_mobile.activities
 
 import android.os.Bundle
 import androidx.activity.viewModels
