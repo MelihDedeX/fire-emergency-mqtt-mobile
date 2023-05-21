@@ -33,6 +33,7 @@ constructor(
                     override fun onSuccess(t: SingleResponseModel<AccessToken>) {
                         println(t)
                     }
+
                     override fun onError(e: Throwable) {
                         println(e)
                     }
@@ -53,9 +54,7 @@ constructor(
 
                     override fun onError(e: Throwable) {
                         println(e)
-
                     }
-
                 })
         )
     }
