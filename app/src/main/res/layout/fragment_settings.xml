@@ -1,12 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FEFEFE"
         tools:context=".fragments.SettingsFragment">
 
         <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:id="@+id/registerCreateAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/dosis_bold"
+            android:text="Settings"
+            android:textColor="#000000"
+            android:textSize="44sp"
+            android:textStyle="bold"
+            android:typeface="sans" />
+
+        <View
+            android:id="@+id/rectangle_5"
+            android:layout_width="330dp"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="180dp"
+            android:background="@drawable/rectangle"
+            android:elevation="4dp"
+            android:alpha="0.4"
+            />
+
+        <Button
+            android:id="@+id/personalInformationButton"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="200dp"
+            android:drawableEnd="@drawable/right_arrow"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:gravity="start"
+            android:text="Personal Information"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/accountSecurityButton"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="240dp"
+            android:drawableEnd="@drawable/right_arrow"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:gravity="start"
+            android:text="Account and Security"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/deviceUpdateButton"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="280dp"
+            android:drawableEnd="@drawable/right_arrow"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:gravity="start"
+            android:text="Device Update"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"

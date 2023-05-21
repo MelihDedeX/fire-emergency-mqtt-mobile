@@ -3,48 +3,34 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FEEE8C"
         tools:context=".activities.RegisterActivity">
 
-        <TextView
-            android:id="@+id/signupText2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:fontFamily="@font/roboto_slab_bold"
-            android:text="Sign in"
-            android:textColor="#FB8D02"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView2" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/registerCreateAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="39dp"
-            android:fontFamily="@font/roboto_slab_bold"
-            android:text="Already have a account?"
-            android:textSize="20sp"
+            android:layout_marginTop="150dp"
+            android:layout_marginLeft="50dp"
+            android:fontFamily="@font/dosis_bold"
+            android:text="Create Account"
+            android:textColor="#000000"
+            android:textSize="40sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/signupText2"
-            app:layout_constraintHorizontal_chainStyle="packed"
+            android:typeface="sans"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginButton2" />
-
+            app:layout_constraintTop_toTopOf="parent" />
         <EditText
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="10dp"
             android:id="@+id/registerPasswordText"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="55dp"
-            android:layout_marginEnd="55dp"
-            android:layout_marginBottom="16dp"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
             android:background="@drawable/back"
             android:drawableStart="@drawable/padlock"
             android:ems="10"
@@ -58,12 +44,11 @@
             app:layout_constraintTop_toBottomOf="@+id/registerEmailText" />
 
         <EditText
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="50dp"
             android:id="@+id/registerEmailText"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="55dp"
-            android:layout_marginEnd="55dp"
-            android:layout_marginBottom="8dp"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
             android:background="@drawable/back"
             android:drawableStart="@drawable/outline_email_24"
             android:ems="10"
@@ -77,13 +62,11 @@
             app:layout_constraintTop_toBottomOf="@+id/registerNameText" />
 
         <EditText
-            android:id="@+id/registerNameText"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="262dp"
-            android:layout_marginEnd="55dp"
             android:layout_marginBottom="10dp"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/registerNameText"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
             android:background="@drawable/back"
             android:drawableStart="@drawable/baseline_account_circle_24"
             android:ems="10"
@@ -97,12 +80,10 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
+            android:layout_marginLeft="50dp"
             android:id="@+id/registerPasswordAgainText"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="55dp"
-            android:layout_marginEnd="55dp"
-            android:layout_marginBottom="31dp"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
             android:background="@drawable/back"
             android:drawableStart="@drawable/padlock"
             android:ems="10"
@@ -116,34 +97,45 @@
             app:layout_constraintTop_toBottomOf="@+id/registerPasswordText" />
 
         <Button
+            android:layout_marginLeft="210dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/loginButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="122dp"
             android:background="@drawable/login_button"
             android:drawableEnd="@drawable/baseline_arrow_forward_24"
             android:fontFamily="@font/roboto_slab_bold"
-            android:paddingHorizontal="15dp"
+            android:paddingHorizontal="18dp"
             android:text="SIGN UP"
             android:textColor="@android:color/white"
             android:textSize="18sp"
+            android:gravity="center"
             app:layout_constraintBottom_toTopOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="@+id/registerPasswordAgainText"
             app:layout_constraintTop_toBottomOf="@+id/registerPasswordAgainText" />
 
+
         <TextView
-            android:id="@+id/registerCreateAccount"
+            android:id="@+id/signupText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="144dp"
-            android:fontFamily="@font/dosis_bold"
-            android:text="Create Account"
-            android:textColor="#000000"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            android:typeface="sans"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginLeft="275dp"
+            android:layout_marginTop="240dp"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:text="Sign in"
+            android:textColor="#FB8D02"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_marginTop="-27dp"
+            android:layout_marginLeft="40dp"
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:text="Already have a account?"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </layout>

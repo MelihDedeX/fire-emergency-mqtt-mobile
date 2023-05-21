@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,16 +10,35 @@
     tools:context=".activities.LoginActivity">
 
     <TextView
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="50dp"
+        android:id="@+id/loginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dosis_bold"
+        android:text="Login"
+        android:textColor="#000000"
+        android:textSize="44sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <TextView
         android:id="@+id/infoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="5dp"
         android:text="Please sign in to continue."
         android:textColor="#5B5656"
+        android:textSize="16sp"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/emailText"
-        android:layout_width="250dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="@drawable/back"
         android:drawableStart="@drawable/outline_email_24"
@@ -31,7 +50,8 @@
 
     <EditText
         android:id="@+id/passwordText"
-        android:layout_width="250dp"
+        android:layout_marginLeft="50dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="@drawable/back"
         android:drawableStart="@drawable/padlock"
@@ -39,30 +59,25 @@
         android:inputType="textPassword"
         android:padding="10dp" />
 
-    <TextView
-        android:id="@+id/loginText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/dosis_bold"
-        android:text="Login"
-        android:textColor="#000000"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:typeface="sans" />
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/login_button"
         android:drawableEnd="@drawable/baseline_arrow_forward_24"
         android:fontFamily="@font/roboto_slab_bold"
-        android:paddingHorizontal="15dp"
+        android:paddingHorizontal="18dp"
         android:text="Login"
+        android:gravity="center"
         android:textColor="@android:color/white"
         android:textSize="18sp" />
 
     <TextView
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="350dp"
         android:id="@+id/signupText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -73,6 +88,8 @@
         android:textStyle="bold" />
 
     <TextView
+        android:layout_marginTop="-27dp"
+        android:layout_marginLeft="50dp"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
