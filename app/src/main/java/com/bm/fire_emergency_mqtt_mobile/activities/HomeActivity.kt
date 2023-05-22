@@ -6,6 +6,7 @@ import androidx.navigation.Navigation
 import com.bm.fire_emergency_mqtt_mobile.R
 import com.bm.fire_emergency_mqtt_mobile.databinding.ActivityHomeBinding
 import com.bm.fire_emergency_mqtt_mobile.fragments.*
+import com.google.firebase.messaging.FirebaseMessaging
 
 class HomeActivity : AppCompatActivity() {
 
@@ -27,6 +28,12 @@ class HomeActivity : AppCompatActivity() {
                 setStaticsFragment()
             }
             true
+        }
+    }
+
+    private fun updateClientInfo() {
+        FirebaseMessaging.getInstance().token.addOnCompleteListener {
+
         }
     }
 

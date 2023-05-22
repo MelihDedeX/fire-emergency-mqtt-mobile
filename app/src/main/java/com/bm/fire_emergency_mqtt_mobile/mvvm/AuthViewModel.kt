@@ -1,10 +1,14 @@
 package com.bm.fire_emergency_mqtt_mobile.mvvm
 
 import android.app.Application
+import androidx.lifecycle.MutableLiveData
 import com.bm.fire_emergency_mqtt_mobile.dto.AccessToken
 import com.bm.fire_emergency_mqtt_mobile.dto.LoginDto
 import com.bm.fire_emergency_mqtt_mobile.dto.RegisterDto
+import com.bm.fire_emergency_mqtt_mobile.models.User
 import com.bm.fire_emergency_mqtt_mobile.services.AuthService
+import com.bm.fire_emergency_mqtt_mobile.utilities.preferences.CustomSharedPreferences
+import com.bm.fire_emergency_mqtt_mobile.utilities.preferences.SharedPreferencesToken
 import com.bm.fire_emergency_mqtt_mobile.utilities.responses.SingleResponseModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -22,6 +26,11 @@ constructor(
     BaseViewModel(application) {
     private val disposable = CompositeDisposable()
 
+    val result = MutableLiveData<SingleResponseModel<AccessToken>>()
+    val isLoggedIn = MutableLiveData<SingleResponseModel<User>>()
+    val logoutResult = MutableLiveData<Boolean>()
+    private val customSharedPreferences = CustomSharedPreferences(getApplication())
+
 
     fun register(registerDto: RegisterDto) {
         disposable.add(
@@ -31,11 +40,14 @@ constructor(
                 .subscribeWith(object :
                     DisposableSingleObserver<SingleResponseModel<AccessToken>>() {
                     override fun onSuccess(t: SingleResponseModel<AccessToken>) {
-                        println(t)
+                        result.value = t
+                        SharedPreferencesToken.token = t.data!!.token
+                        SharedPreferencesToken.userId = t.data!!.user.id
+                        customSharedPreferences.saveToken(t.data)
                     }
 
                     override fun onError(e: Throwable) {
-                        println(e)
+                        result.value = SingleResponseModel(null,false,e.message)
                     }
                 })
         )
@@ -49,11 +61,14 @@ constructor(
                 .subscribeWith(object :
                     DisposableSingleObserver<SingleResponseModel<AccessToken>>() {
                     override fun onSuccess(t: SingleResponseModel<AccessToken>) {
-                        println(t)
+                        result.value = t
+                        customSharedPreferences.saveToken(t.data!!)
+                        SharedPreferencesToken.token = t.data.token
+                        SharedPreferencesToken.userId = t.data.user.id
                     }
 
                     override fun onError(e: Throwable) {
-                        println(e)
+                        result.value = SingleResponseModel(null,false,e.message)
                     }
                 })
         )
