@@ -8,27 +8,25 @@
         android:background="#FEFEFE"
         tools:context=".fragments.SettingsFragment">
 
-        <!-- TODO: Update blank fragment layout -->
         <TextView
             android:id="@+id/registerCreateAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="100dp"
-            android:fontFamily="@font/dosis_bold"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/sedgwick_ave"
             android:text="Settings"
-            android:textColor="#000000"
+            android:textColor="#D8000000"
             android:textSize="44sp"
-            android:textStyle="bold"
+            android:textStyle="normal|bold"
             android:typeface="sans" />
 
         <View
             android:id="@+id/rectangle_5"
-            android:layout_width="330dp"
+            android:layout_width="360dp"
             android:layout_height="150dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="25dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="180dp"
             android:background="@drawable/rectangle"
@@ -38,42 +36,101 @@
 
         <Button
             android:id="@+id/personalInformationButton"
-            android:layout_width="250dp"
+            android:layout_width="310dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="190dp"
             android:drawableEnd="@drawable/right_arrow"
             android:fontFamily="@font/roboto_slab_bold"
-            android:gravity="start"
+            android:gravity="fill"
             android:text="Personal Information"
             android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:background="@color/exp_none"
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/accountSecurityButton"
-            android:layout_width="250dp"
+            android:layout_width="310dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="240dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="230dp"
+            android:background="@color/exp_none"
             android:drawableEnd="@drawable/right_arrow"
             android:fontFamily="@font/roboto_slab_bold"
-            android:gravity="start"
+            android:gravity="fill"
             android:text="Account and Security"
             android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/deviceUpdateButton"
-            android:layout_width="250dp"
+            android:layout_width="310dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="270dp"
             android:drawableEnd="@drawable/right_arrow"
             android:fontFamily="@font/roboto_slab_bold"
-            android:gravity="start"
+            android:gravity="fill"
+            android:background="@color/exp_none"
             android:text="Device Update"
             android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/rectangle_6"
+            android:layout_width="360dp"
+            android:layout_height="160dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="350dp"
+            android:background="@drawable/rectangle"
+            android:elevation="4dp"
+            android:alpha="0.4"
+            />
+
+        <Switch
+            android:layout_marginTop="370dp"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/switchButton"
+            android:layout_width="315dp"
+            android:layout_height="wrap_content"
+            android:text="SOUND"
+            android:checked="false"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:thumb="@drawable/baseline_brightness_1_24"
+            android:track="@drawable/track_selector"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/aboutButton"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="410dp"
+            android:drawableEnd="@drawable/right_arrow"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:gravity="fill"
+            android:background="@color/exp_none"
+            android:text="About"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/privacySettingsButton"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="450dp"
+            android:drawableEnd="@drawable/right_arrow"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:gravity="fill"
+            android:background="@color/exp_none"
+            android:text="Privacy Settings"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
 
         <TextView
             android:layout_width="match_parent"
