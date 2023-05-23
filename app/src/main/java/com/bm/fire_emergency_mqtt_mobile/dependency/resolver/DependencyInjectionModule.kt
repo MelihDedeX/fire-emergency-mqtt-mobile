@@ -41,5 +41,10 @@ class DependencyInjectionModule {
         return UserServiceImpl()
     }
 
+    @Provides
+    @Singleton
+    fun clientInfoProvider() : ClientInfoService {
+        return ClientInfoServiceImpl()
+    }
 
 }

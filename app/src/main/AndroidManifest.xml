@@ -15,6 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fireemergencymqttmobile"
         tools:targetApi="31">
+>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/fire" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/white" />
         <activity
             android:name=".activities.HomeActivity"
             android:exported="false" />
@@ -33,7 +40,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <service
+            android:name="com.bm.fire_emergency_mqtt_mobile.firebase.FirebaseMessageReceiver"
+            android:exported="false"
+            >
+                <intent-filter>
+                    <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                    <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                </intent-filter>
+        </service>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
