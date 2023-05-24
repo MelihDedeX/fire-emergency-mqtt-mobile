@@ -6,6 +6,7 @@ import com.bm.fire_emergency_mqtt_mobile.dto.RegisterDto
 import com.bm.fire_emergency_mqtt_mobile.utilities.responses.SingleResponseModel
 import io.reactivex.Single
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface AuthService {
@@ -15,4 +16,6 @@ interface AuthService {
 
     @POST("auth/login")
     fun login(@Body loginDto: LoginDto): Single<SingleResponseModel<AccessToken>>
+    @GET("auth/isLoggedIn")
+    fun isLoggedIn(): Single<SingleResponseModel<AccessToken>>
 }

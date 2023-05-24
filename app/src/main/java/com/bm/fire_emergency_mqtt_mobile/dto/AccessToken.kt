@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 class AccessToken(
     @SerializedName("user")
     val user : User,
-    @SerializedName("token")
+    @SerializedName("accessToken")
     val token : String
 ) {
 

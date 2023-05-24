@@ -9,6 +9,7 @@ import com.bm.fire_emergency_mqtt_mobile.models.User
 import com.bm.fire_emergency_mqtt_mobile.services.AuthService
 import com.bm.fire_emergency_mqtt_mobile.utilities.preferences.CustomSharedPreferences
 import com.bm.fire_emergency_mqtt_mobile.utilities.preferences.SharedPreferencesToken
+import com.bm.fire_emergency_mqtt_mobile.utilities.responses.ResponseModel
 import com.bm.fire_emergency_mqtt_mobile.utilities.responses.SingleResponseModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -27,7 +28,7 @@ constructor(
     private val disposable = CompositeDisposable()
 
     val result = MutableLiveData<SingleResponseModel<AccessToken>>()
-    val isLoggedIn = MutableLiveData<SingleResponseModel<User>>()
+    val isLoggedIn = MutableLiveData<SingleResponseModel<AccessToken>>()
     val logoutResult = MutableLiveData<Boolean>()
     private val customSharedPreferences = CustomSharedPreferences(getApplication())
 
@@ -73,5 +74,33 @@ constructor(
                 })
         )
     }
+
+    fun isLoggedIn() {
+        disposable.add(
+            authService.isLoggedIn()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(object :DisposableSingleObserver<SingleResponseModel<AccessToken>>() {
+                    override fun onSuccess(t: SingleResponseModel<AccessToken>) {
+                        if (t.success) {
+                            isLoggedIn.value = t
+                        }
+                    }
+
+                    override fun onError(e: Throwable) {
+                        isLoggedIn.value = SingleResponseModel(null,false,e.message)
+                    }
+
+                })
+        )
+    }
+
+    fun logOut() {
+        logoutResult.value = true
+        customSharedPreferences.removeToken()
+        SharedPreferencesToken.token = ""
+        SharedPreferencesToken.userId = null
+    }
+
 
 }

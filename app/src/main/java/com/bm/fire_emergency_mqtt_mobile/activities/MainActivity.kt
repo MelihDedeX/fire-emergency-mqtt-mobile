@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bm.fire_emergency_mqtt_mobile.databinding.ActivityMainBinding
+import com.bm.fire_emergency_mqtt_mobile.dto.CurrentUser
 import com.bm.fire_emergency_mqtt_mobile.dto.LoginDto
 import com.bm.fire_emergency_mqtt_mobile.firebase.FirebaseMessageReceiver
 import com.bm.fire_emergency_mqtt_mobile.mvvm.AuthViewModel
@@ -25,9 +26,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        customSharedPreferences  = CustomSharedPreferences(application)
-        SharedPreferencesToken.token = customSharedPreferences.getToken()
-        SharedPreferencesToken.userId = customSharedPreferences.getUserId()
+
+
+        controlSession()
 
         binding.login.setOnClickListener {
             val intent = Intent(this,LoginActivity::class.java)
@@ -38,8 +39,22 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,RegisterActivity::class.java)
             startActivity(intent)
         }
+    }
 
+    private fun controlSession(){
+        val customSharedPreferences = CustomSharedPreferences(application)
+        val token = customSharedPreferences.getToken()
+        val userId = customSharedPreferences.getUserId()
+        SharedPreferencesToken.token = token
+        SharedPreferencesToken.userId = userId
+        viewModel.isLoggedIn()
+        viewModel.isLoggedIn.observe(this){
+            if (it.success){
+                CurrentUser.user = it.data?.user!!
 
-
+                val intent = Intent(this,HomeActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 }

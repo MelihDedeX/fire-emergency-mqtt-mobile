@@ -17,4 +17,8 @@ class AuthServiceImpl : AuthService {
     override fun login(loginDto: LoginDto): Single<SingleResponseModel<AccessToken>> {
         return api.login(loginDto)
     }
+
+    override fun isLoggedIn(): Single<SingleResponseModel<AccessToken>> {
+        return api.isLoggedIn();
+    }
 }

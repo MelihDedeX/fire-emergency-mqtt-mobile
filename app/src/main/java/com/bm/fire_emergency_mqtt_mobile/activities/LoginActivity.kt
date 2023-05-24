@@ -32,8 +32,6 @@ class LoginActivity : AppCompatActivity() {
         val email = binding.emailText.text.toString()
         val password = binding.passwordText.text.toString()
 
-        authViewModel.login(LoginDto(email, password))
-
         if (!email.contains("@") && !email.contains(".com")) {
             Toast.makeText(this, "This is not an email address", Toast.LENGTH_LONG).show()
             return
