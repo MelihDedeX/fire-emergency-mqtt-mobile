@@ -8,6 +8,8 @@ class User(
     val id: Number,
     @SerializedName("email")
     val email: String,
+    @SerializedName("fullName")
+    val fullName: String,
     @SerializedName("created_at")
     val createdAt: Date
 ) : Entity {

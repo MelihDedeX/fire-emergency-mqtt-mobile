@@ -9,10 +9,10 @@ class ElectronicCardUser(
     @SerializedName("name")
     val name: String,
     @SerializedName("user")
-    val user: User,
+    val user: User?,
     @SerializedName("card")
-    val card: ElectronicCard,
+    val card: ElectronicCard?,
     @SerializedName("created_at")
-    val createdAt: Date
+    val createdAt: Date?
 ) : Entity {
 }

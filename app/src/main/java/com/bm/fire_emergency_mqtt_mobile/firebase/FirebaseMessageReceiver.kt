@@ -27,13 +27,15 @@ class FirebaseMessageReceiver : FirebaseMessagingService() {
     }
 
     override fun onMessageReceived(message: RemoteMessage) {
-        if(message.notification != null) {
+        if (message.notification != null) {
             generateNotification(message.notification!!.title!!, message.notification!!.body!!)
         }
     }
 
-    fun generateNotification(title: String, text: String) {
+    fun generateNotification(title: String, message: String) {
         val intent = Intent(this, HomeActivity::class.java)
+        intent.putExtra("urgentData", message)
+        intent.putExtra("dataType", DataType.URGENT)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
 
         val pendingIntent = PendingIntent.getActivity(
@@ -49,23 +51,25 @@ class FirebaseMessageReceiver : FirebaseMessagingService() {
             .setVibrate(longArrayOf(1000, 1000, 1000, 1000))
             .setOnlyAlertOnce(true)
             .setContentIntent(pendingIntent)
-        builder = builder.setContent(getView(title, text))
+        builder = builder.setContent(getView(title, message))
 
-        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val notificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val notificationChannel = NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_HIGH)
+            val notificationChannel =
+                NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_HIGH)
             notificationManager.createNotificationChannel(notificationChannel)
         }
 
-        notificationManager.notify(0,builder.build())
+        notificationManager.notify(0, builder.build())
     }
 
     @SuppressLint("RemoteViewLayout")
-    fun getView(title :String, message:String) : RemoteViews {
-        val remoteView = RemoteViews(channelName,R.layout.notification)
+    fun getView(title: String, message: String): RemoteViews {
+        val remoteView = RemoteViews(channelName, R.layout.notification)
         remoteView.setTextViewText(R.id.title, title)
-        remoteView.setTextViewText(R.id.description,message)
+        remoteView.setTextViewText(R.id.description, message)
         remoteView.setImageViewResource(R.id.notification_app_logo, R.drawable.fire)
 
         return remoteView
