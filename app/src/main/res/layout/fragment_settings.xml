@@ -6,133 +6,157 @@
     android:layout_height="match_parent"
     android:background="#FEFEFE"
     tools:context=".fragments.SettingsFragment">
-
-    <TextView
-        android:id="@+id/registerCreateAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="80dp"
-        android:fontFamily="@font/sedgwick_ave"
-        android:text="Settings"
-        android:textColor="#D8000000"
-        android:textSize="44sp"
-        android:textStyle="normal|bold"
-        android:typeface="sans" />
-
-    <LinearLayout
-        android:id="@+id/rectangle_5"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:background="@drawable/rectangle"
-        android:elevation="4dp"
-        android:alpha="0.4"
-        android:orientation="vertical" >
-
-        <Button
-            android:id="@+id/personalInformationButton"
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/right_arrow"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:fontFamily="@font/roboto_slab_bold"
-            android:background="@color/exp_none"
-            android:gravity="fill"
-            android:text="Personal Information"
-            android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/accountSecurityButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/right_arrow"
-            android:background="@color/exp_none"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:fontFamily="@font/roboto_slab_bold"
-            android:gravity="fill"
-            android:text="Account and Security"
-            android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            <TextView
+                android:id="@+id/registerCreateAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/sedgwick_ave"
+                android:text="Settings"
+                android:textColor="#D8000000"
+                android:textSize="44sp"
+                android:textStyle="normal|bold"
+                android:typeface="sans" />
 
-        <Button
-            android:id="@+id/deviceUpdateButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/right_arrow"
-            android:background="@color/exp_none"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:fontFamily="@font/roboto_slab_bold"
-            android:gravity="fill"
-            android:text="Device Update"
-            android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            <LinearLayout
+                android:id="@+id/rectangle_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:background="@drawable/rectangle"
+                android:elevation="4dp"
+                android:alpha="0.4"
+                android:orientation="vertical" >
 
-    </LinearLayout>
+                <Button
+                    android:id="@+id/personalInformationButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/right_arrow"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/roboto_slab_bold"
+                    android:background="@color/exp_none"
+                    android:gravity="fill"
+                    android:text="Personal Information"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
 
-    <LinearLayout
-        android:id="@+id/rectangle_6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:background="@drawable/rectangle"
-        android:elevation="4dp"
-        android:alpha="0.4"
-        android:orientation="vertical" >
+                <Button
+                    android:id="@+id/accountSecurityButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/right_arrow"
+                    android:background="@color/exp_none"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/roboto_slab_bold"
+                    android:gravity="fill"
+                    android:text="Account and Security"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
 
-        <Switch
-            android:id="@+id/switchButton"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:text="SOUND"
-            android:checked="false"
-            android:fontFamily="@font/roboto_slab_bold"
-            android:thumb="@drawable/baseline_brightness_1_24"
-            android:track="@drawable/track_selector"
-            android:textColor="@android:color/black"
-            android:textSize="16sp" />
+                <Button
+                    android:id="@+id/deviceUpdateButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/right_arrow"
+                    android:background="@color/exp_none"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/roboto_slab_bold"
+                    android:gravity="fill"
+                    android:text="Device Update"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/aboutButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/right_arrow"
-            android:background="@color/exp_none"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:fontFamily="@font/roboto_slab_bold"
-            android:gravity="fill"
-            android:text="About"
-            android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            </LinearLayout>
 
-        <Button
-            android:id="@+id/privacySettingsButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/exp_none"
-            android:drawableEnd="@drawable/right_arrow"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:fontFamily="@font/roboto_slab_bold"
-            android:gravity="fill"
-            android:text="Privacy Settings"
-            android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            <LinearLayout
+                android:id="@+id/rectangle_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:background="@drawable/rectangle"
+                android:elevation="4dp"
+                android:alpha="0.4"
+                android:orientation="vertical" >
 
-    </LinearLayout>
+                <Switch
+                    android:id="@+id/switchButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:text="SOUND"
+                    android:checked="false"
+                    android:fontFamily="@font/roboto_slab_bold"
+                    android:thumb="@drawable/baseline_brightness_1_24"
+                    android:track="@drawable/track_selector"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/aboutButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/right_arrow"
+                    android:background="@color/exp_none"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/roboto_slab_bold"
+                    android:gravity="fill"
+                    android:text="About"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/privacySettingsButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/exp_none"
+                    android:drawableEnd="@drawable/right_arrow"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/roboto_slab_bold"
+                    android:gravity="fill"
+                    android:text="Privacy Settings"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/button_add_device"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/logout_btn_background"
+                android:layout_margin="16dp"
+                android:text="Logout"
+                android:textAllCaps="false"
+                android:fontFamily="@font/roboto_slab_bold"
+                android:textColor="@android:color/white"
+                android:textSize="18dp"/>
+        </LinearLayout>
+
+
+    </ScrollView>
 
 </LinearLayout>
