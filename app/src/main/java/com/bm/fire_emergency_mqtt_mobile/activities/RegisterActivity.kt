@@ -12,12 +12,14 @@ import com.bm.fire_emergency_mqtt_mobile.databinding.ActivityRegisterBinding
 import com.bm.fire_emergency_mqtt_mobile.dto.CurrentUser
 import com.bm.fire_emergency_mqtt_mobile.dto.RegisterDto
 import com.bm.fire_emergency_mqtt_mobile.mvvm.AuthViewModel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
     private val authViewModel: AuthViewModel by viewModels()
+    private lateinit var backButton: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +29,12 @@ class RegisterActivity : AppCompatActivity() {
         binding.loginButton2.setOnClickListener {
             register()
         }
+        backButton = findViewById(R.id.backButton)
+        backButton.setOnClickListener {
+            onBackPressed()
+        }
     }
+
 
     private fun register() {
         val email = binding.registerEmailText.text.toString()

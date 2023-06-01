@@ -11,4 +11,6 @@
     <color name="orange_main">#FB8D02</color>
     <color name="exp_none">#00FB8D02</color>
     <color name="background_color">#FEEE8C</color>
+    <color name="purple_dc">#b172ef</color>
+    <color name="red">#6b1d1d</color>
 </resources>
