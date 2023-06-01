@@ -7,10 +7,12 @@ import io.reactivex.Single
 
 class ElectronicCardUserServiceImpl : ElectronicCardUserService {
 
-    private val api = api<ElectronicCardUserService, ElectronicCardUser>()
+    private val api = api<ElectronicCardUserService, ElectronicCardUser>(false)
     override fun add(card: ElectronicCardUser): Single<SingleResponseModel<ElectronicCardUser>> {
-        return api.add(card);
+        return api.add(card)
     }
+
+
 
     override fun findAllByUserId(
         userId: Number,
@@ -19,5 +21,4 @@ class ElectronicCardUserServiceImpl : ElectronicCardUserService {
     ): Single<PageListResponseModel<ElectronicCardUser>> {
         return api.findAllByUserId(userId, page, pageSize)
     }
-
 }

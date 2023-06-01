@@ -7,10 +7,10 @@ class ElectronicCard(
     @SerializedName("id")
     val id: Number,
     @SerializedName("uuid")
-    val uuid: String,
+    val uuid: String?,
     @SerializedName("qr_code")
-    val qrCode: String,
+    val qrCode: String?,
     @SerializedName("created_at")
-    val createdAt: Date
+    val createdAt: Date?
 ) : Entity {
 }

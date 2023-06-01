@@ -8,6 +8,7 @@ import android.app.PendingIntent;
 import android.content.Context
 import android.content.Intent;
 import android.os.Build
+import android.util.Log
 import android.widget.RemoteViews
 import android.widget.RemoteViews.RemoteView
 import androidx.core.app.NotificationCompat
@@ -15,12 +16,14 @@ import com.bm.fire_emergency_mqtt_mobile.R
 import com.bm.fire_emergency_mqtt_mobile.activities.HomeActivity
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import org.json.JSONArray
+import org.json.JSONObject
 
 
 class FirebaseMessageReceiver : FirebaseMessagingService() {
 
     private val channelId = "notification_channel";
-    private val channelName = "com.bm.fcm.pushnotification"
+    private val channelName = "com.bm.fire_emergency_mqtt_mobile.firebase"
 
     override fun onNewToken(token: String) {
         super.onNewToken(token)
@@ -33,9 +36,13 @@ class FirebaseMessageReceiver : FirebaseMessagingService() {
     }
 
     fun generateNotification(title: String, message: String) {
+        val messageArray = message.split("cardId:")
+        val cardID = messageArray[1];
+
         val intent = Intent(this, HomeActivity::class.java)
         intent.putExtra("urgentData", message)
-        intent.putExtra("dataType", DataType.URGENT)
+        intent.putExtra("dataType", DataType.URGENT.name)
+        intent.putExtra("cardId", cardID)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
 
         val pendingIntent = PendingIntent.getActivity(
@@ -47,11 +54,13 @@ class FirebaseMessageReceiver : FirebaseMessagingService() {
 
         var builder = NotificationCompat.Builder(applicationContext, channelId)
             .setSmallIcon(R.drawable.fire)
+            .setContentTitle(title)
+            .setContentText(message)
             .setAutoCancel(true)
             .setVibrate(longArrayOf(1000, 1000, 1000, 1000))
             .setOnlyAlertOnce(true)
             .setContentIntent(pendingIntent)
-        builder = builder.setContent(getView(title, message))
+        //   builder = builder.setContent(getView(title, message))
 
         val notificationManager =
             getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -64,6 +73,7 @@ class FirebaseMessageReceiver : FirebaseMessagingService() {
 
         notificationManager.notify(0, builder.build())
     }
+
 
     @SuppressLint("RemoteViewLayout")
     fun getView(title: String, message: String): RemoteViews {

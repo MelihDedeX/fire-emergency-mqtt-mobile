@@ -10,12 +10,12 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface ElectronicCardUserService {
+interface ElectronicCardUserService  {
 
-    @POST
+    @POST("electronicCardUsers")
     fun add(@Body card: ElectronicCardUser): Single<SingleResponseModel<ElectronicCardUser>>
 
-    @GET
+    @GET("electronicCardUsers")
     fun findAllByUserId(
         @Query("userId") userId: Number,
         @Query("page") page: Number,

@@ -43,8 +43,14 @@ class DependencyInjectionModule {
 
     @Provides
     @Singleton
-    fun clientInfoProvider() : ClientInfoService {
+    fun clientInfoProvider(): ClientInfoService {
         return ClientInfoServiceImpl()
+    }
+
+    @Provides
+    @Singleton
+    fun commandServiceProvider(): CommandService {
+        return CommandServiceImpl()
     }
 
 }

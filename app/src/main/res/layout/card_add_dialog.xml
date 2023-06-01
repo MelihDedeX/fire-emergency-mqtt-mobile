@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#FEEE8C"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/cardName"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/back"
+            android:ems="10"
+            android:layout_gravity="center_horizontal"
+            android:hint="card name"
+            android:fontFamily="@font/dosis_bold"
+            android:inputType="text"
+            android:padding="10dp"
+            android:singleLine="true" />
+
+
+        <EditText
+            android:id="@+id/cardUUID"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/back"
+            android:ems="10"
+            android:layout_gravity="center_horizontal"
+            android:hint="card id"
+            android:fontFamily="@font/dosis_bold"
+            android:inputType="text"
+            android:padding="10dp"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/login_button"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:paddingHorizontal="18dp"
+            android:text="Add"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/login_button"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:paddingHorizontal="18dp"
+            android:text="Cancel"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+
+
+</LinearLayout>
